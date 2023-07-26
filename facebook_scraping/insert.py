@@ -1,9 +1,28 @@
 from sqlalchemy import create_engine
-from models import Comments ,Reaction,Post
+from models import Comments ,Reaction,Post , pages
 from sqlalchemy.sql import select
 import conne
+def ajout_page( pg_name,pg_id):
+    engine = create_engine(conne.url)
+    pages_table = pages.__table__
+    with engine.begin() as conn:
+        existing_row = conn.execute(
+            pages_table.select().where(pages_table.c.page_id == pg_id)
+        ).fetchone()
 
-def ajout_post(gen):
+        if existing_row is None:
+            insert_query = pages_table.insert().values(
+                
+                
+                page_name= pg_name,
+                page_id=pg_id
+            )
+            conn.execute(insert_query)
+            print("page  inserted ")
+            conn.commit()
+        else:
+            print("page  exists")
+def ajout_post(gen,pg_id):
     engine = create_engine(conne.url)
     posts_table = Post.__table__
     with engine.begin() as conn:
@@ -14,7 +33,8 @@ def ajout_post(gen):
         if existing_row is None:
             insert_query = posts_table.insert().values(
                 post_id=gen['post_id'],
-                post_time=gen['time']
+                post_time=gen['time'],
+                page_id=pg_id
             )
             conn.execute(insert_query)
             print("Post inserted")

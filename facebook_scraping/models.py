@@ -1,12 +1,23 @@
 from sqlalchemy import Column, String, TIMESTAMP ,BIGINT, ForeignKey,Integer
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import relationship
 Base = declarative_base()
+class pages(Base):
+    __tablename__='pages'
+    page_id = Column(BIGINT, primary_key=True)
+    page_name = Column(String)
+    
+    def __repr__(self):
+        return f"<page(page_id='{self.page_id}', page_name='{self.page_name}')>"
+
+
 class Post(Base):
     __tablename__ = 'posts'
 
     post_id = Column(String, primary_key=True)
     post_time = Column(TIMESTAMP)
+    page_id = Column(BIGINT, ForeignKey('pages.page_id'))
+    post = relationship("pages")
 
     def __repr__(self):
         return f"<Post(post_id='{self.post_id}', post_time='{self.post_time}')>"
