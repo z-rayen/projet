@@ -1,12 +1,17 @@
-C:\Users\rayen\Desktop\project\scraping_code.py
-C:\Users\rayen\Desktop\project\test.py
-C:\Users\rayen\Desktop\project\test2.py
-C:\Users\rayen\Desktop\project\test3.py
-C:\Users\rayen\Desktop\project\www.facebook.com_cookies.json
-C:\Users\rayen\Desktop\project\www.facebook.com_cookies.txt
-C:\Users\rayen\Desktop\project\facebook_scraping\conne.py
-C:\Users\rayen\Desktop\project\facebook_scraping\Lib\site-packages
-C:\Users\rayen\Desktop\project\facebook_scraping\Include\site\python3.11\greenlet
-C:\Users\rayen\Desktop\project\facebook_scraping\Scripts
-C:\Users\rayen\Desktop\project\facebook_scraping\__pycache__
-C:\Users\rayen\Desktop\project\facebook_scraping\pyvenv.cfg
+# Ignore Python virtual environment directories
+facebook_scraping/Include/
+facebook_scraping/Lib/
+facebook_scraping/Scripts/
+facebook_scraping/__pycache__/
+facebook_scraping/pyvenv.cfg
+
+# Ignore specific files
+www.facebook.com_cookies.json
+www.facebook.com_cookies.txt
+
+# Ignore specific Python files
+scraping_code.py
+test.py
+test2.py
+test3.py
+
