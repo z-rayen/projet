@@ -2,26 +2,29 @@ from sqlalchemy import create_engine
 from models import Comments ,Reaction,Post , pages
 from sqlalchemy.sql import select
 import conne
-def ajout_page( pg_name,pg_id):
+def ajout_page( pg_name):
+    if pg_name=='':
+        return ("can not add a page without name ! ")
     engine = create_engine(conne.url)
     pages_table = pages.__table__
     with engine.begin() as conn:
         existing_row = conn.execute(
-            pages_table.select().where(pages_table.c.page_id == pg_id)
+            pages_table.select().where(pages_table.c.page_name == pg_name)
         ).fetchone()
 
         if existing_row is None:
             insert_query = pages_table.insert().values(
                 
                 
-                page_name= pg_name,
-                page_id=pg_id
+                page_name= pg_name    
             )
             conn.execute(insert_query)
-            print("page  inserted ")
+             
             conn.commit()
+            
+            return ("page inserted")
         else:
-            print("page  exists")
+            return ("page exist alredy!!")
 def ajout_post(gen,pg_id):
     engine = create_engine(conne.url)
     posts_table = Post.__table__
@@ -39,6 +42,7 @@ def ajout_post(gen,pg_id):
             conn.execute(insert_query)
             print("Post inserted")
             conn.commit()
+            print("Post inserted")
         else:
             print("Post exists")
 def ajout_comments(gen):
