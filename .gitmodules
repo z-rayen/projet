@@ -1,0 +1,3 @@
+[submodule "page-manegment"]
+	path = page-manegment
+	url = https://github.com/AlchemyCode/social-monitor.git
