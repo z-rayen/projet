@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import selecteur as sl 
 from insert import ajout_page
+
 app = Flask(__name__)
 CORS(app)
 @app.route("/pages", methods=['GET'])
