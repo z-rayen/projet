@@ -4,7 +4,7 @@ facebook_scraping/Lib/
 facebook_scraping/Scripts/
 facebook_scraping/__pycache__/
 facebook_scraping/pyvenv.cfg
-
+facebook_scraping/conne.py
 # Ignore specific files
 www.facebook.com_cookies.json
 www.facebook.com_cookies.txt
