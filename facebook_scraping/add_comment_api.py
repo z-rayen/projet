@@ -27,7 +27,7 @@ def put_comment(postID,comment_txt):
 @app.route('/post_comment' , methods=['POST'])
 def api_post_comment():
     data = request.json
-    postURL=data['url']
+    postURL=data['id']
     comment_txt=data['msg']
     put_comment(postURL,comment_txt)
     return jsonify({"message": "Comment posted successfully!"})
