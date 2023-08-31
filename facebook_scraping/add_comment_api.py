@@ -5,10 +5,10 @@ from flask import Flask , request , jsonify
 import conne
 app = Flask(__name__)
 
-def put_comment(postURL,comment_txt):
+def put_comment(postID,comment_txt):
     browser = webdriver.Chrome("C:/Users/rayen/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe")
-    postURL=postURL.replace("www.facebook.com", "m.facebook.com")
-    postURL="https://m.facebook.com/login.php?next=" + postURL
+    
+    postURL="https://m.facebook.com/login.php?next=https://m.facebook.com/" + postID
     browser.get(postURL)
     userIdField = browser.find_element("id","m_login_email")
     passwordField = browser.find_element("id","m_login_password")
