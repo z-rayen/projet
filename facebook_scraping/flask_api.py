@@ -30,7 +30,6 @@ def affich_reactions(post_id):
 def create_page():
     try:
         page = request.json
-        print(page)
         err= ajout_page(page['name'])
         return jsonify({"message": err}), 201
     except Exception as e:

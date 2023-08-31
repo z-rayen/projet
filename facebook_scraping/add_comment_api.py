@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 def put_comment(postURL,comment_txt):
     browser = webdriver.Chrome("C:/Users/rayen/Downloads/chromedriver-win64/chromedriver-win64/chromedriver.exe")
-    
+    postURL=postURL.replace("www.facebook.com", "m.facebook.com")
+    postURL="https://m.facebook.com/login.php?next=" + postURL
     browser.get(postURL)
     userIdField = browser.find_element("id","m_login_email")
     passwordField = browser.find_element("id","m_login_password")
