@@ -1,4 +1,5 @@
 # Ignore Python virtual environment directories
+facebook_scraping/
 facebook_scraping/Include/
 facebook_scraping/Lib/
 facebook_scraping/Scripts/
