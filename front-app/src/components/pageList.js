@@ -10,7 +10,7 @@ function PageList() {
   const [long,setLong] = useState([]);
   useEffect(() => {
     
-    axios.get('http://127.0.0.1:5000/pages')
+    axios.get('https://flask-app-7brx.onrender.com/pages')
       .then(response => {
         setData(response.data);
         

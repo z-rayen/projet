@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 function PostNember({ page_id }) {
 
     const [long,setLong] = useState([]);
-    const api='http://127.0.0.1:5000/posts/' + page_id;
+    const api='https://flask-app-7brx.onrender.com/posts/' + page_id;
     useEffect(() => {
       
       axios.get(api)

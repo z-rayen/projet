@@ -20,7 +20,7 @@ function AddPageForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-    const respons = await axios.post('http://127.0.0.1:5000/add/new_page', 
+    const respons = await axios.post('https://flask-app-7brx.onrender.com/add/new_page', 
             page,
         
       )

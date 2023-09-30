@@ -27,8 +27,8 @@ function ProgressCell({ numerator, denominator }) {
 function ReactionNember({ post_id }) {
     const [longc,setLongc] = useState([]);
     const [longr,setLongr] = useState([]);
-    const apic='http://127.0.0.1:5000/posts/comments/' + post_id;
-    const apir='http://127.0.0.1:5000/posts/reactions/' + post_id;
+    const apic='https://flask-app-7brx.onrender.com/posts/comments/' + post_id;
+    const apir='https://flask-app-7brx.onrender.com/posts/reactions/' + post_id;
     useEffect(() => {
       
       axios.get(apic)

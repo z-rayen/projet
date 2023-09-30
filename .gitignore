@@ -16,3 +16,15 @@ test.py
 test2.py
 test3.py
 
+
+# Local Netlify folder
+.netlify
+
+
+app_api/
+app_api/Include/
+app_api/Lib/
+app_api/Scripts/
+app_api/__pycache__/
+app_api/pyvenv.cfg
+app_api/conne.py

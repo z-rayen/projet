@@ -9,7 +9,7 @@ function ReactionList() {
    
     const [data, setData] = useState([]);
     const { page_id ,page_name,post_id } = useParams();
-    const api='http://127.0.0.1:5000//posts/reactions/' + post_id;
+    const api='https://flask-app-7brx.onrender.com/posts/reactions/' + post_id;
     useEffect(() => {
       
       axios.get(api)

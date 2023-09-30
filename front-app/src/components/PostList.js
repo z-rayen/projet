@@ -10,7 +10,7 @@ function PostList() {
   
     const [data, setData] = useState([]);
     const { page_id ,page_name } = useParams();
-    const api='http://127.0.0.1:5000/posts/' + page_id;
+    const api='https://flask-app-7brx.onrender.com/posts/' + page_id;
     useEffect(() => {
       
       axios.get(api)
@@ -77,6 +77,9 @@ function PostList() {
                                 <th scope="col" className=" px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                     reaction
                                 </th>
+                                <th scope="col" className=" px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    post_text
+                                </th>
 
                                 
                             </tr>
@@ -105,8 +108,15 @@ function PostList() {
                                 <Link to={`/page/${page_id}/${page_name}/reactions/post/${item[0]}`}>
                                 <ReactionNember post_id={item[0]}  />
                                 </Link>
+                                </td>
+                                <td className="px-4 py-4 text-sm whitespace-nowrap">
+                                    <div>
+                                        <h4 className="text-gray-700 dark:text-gray-200">{item[3]}</h4>
+
+                                    </div>
                                 </td>   
-                            </tr>))}
+                            </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
